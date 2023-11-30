@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { Link, animateScroll as scroll } from "react-scroll";
 import './App.css';
 
 function App() {
@@ -26,7 +27,12 @@ function App() {
   }, [currentPage]);
 
   const scrollToPage = (index) => {
-    pagesRef.current[index].scrollIntoView({ behavior: 'smooth' });
+    scroll.scrollTo(pagesRef.current[index].offsetTop, {
+      duration: 1000,
+      delay: 0,
+      smooth: "easeInOutQuart",
+    });
+  
   };
 
   return (
