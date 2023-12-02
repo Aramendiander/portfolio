@@ -1,4 +1,4 @@
-/* :root {
+ :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -12,6 +12,8 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+/*
 
 a {
   font-weight: 500;
@@ -83,10 +85,10 @@ button:focus-visible {
   font-size: 2em;
 }
 
-#page1 {
+/* #page1 {
   background-color: #3498db;
   color: #fff;
-}
+} */
 
 #page2 {
   background-color: #2ecc71;
@@ -96,4 +98,11 @@ button:focus-visible {
 #page3 {
   background-color: #e74c3c;
   color: #fff;
+}
+
+.presentation {
+  position: absolute;
+  color: #fff;
+  padding: 50px;
+  background-color: black;
 }

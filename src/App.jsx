@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link, animateScroll as scroll } from "react-scroll";
 import './App.css';
+import Stars from './components/Stars';
+import Presentation from './components/Presentation';
 
 function App() {
   const [currentPage, setCurrentPage] = useState(0);
@@ -11,17 +13,17 @@ function App() {
   useEffect(() => {
     let startY;
     const threshold = 100;
-  
+
     const handleTouchStart = (event) => {
       startY = event.touches[0].clientY;
     };
-  
+
     const handleTouchMove = (event) => {
       if (isScrolling) return;
-  
+
       const endY = event.touches[0].clientY;
       const deltaY = startY - endY;
-  
+
       if (Math.abs(deltaY) > threshold) {
         setIsScrolling(true);
         if (deltaY > 0 && currentPage < pagesRef.current.length - 1) {
@@ -32,10 +34,10 @@ function App() {
         setTimeout(() => setIsScrolling(false), 1000); // Adjust this value to change the delay
       }
     };
-  
+
     window.addEventListener('touchstart', handleTouchStart);
     window.addEventListener('touchmove', handleTouchMove);
-  
+
     return () => {
       window.removeEventListener('touchstart', handleTouchStart);
       window.removeEventListener('touchmove', handleTouchMove);
@@ -47,7 +49,7 @@ function App() {
   useEffect(() => {
     const handleWheel = (event) => {
       if (isScrolling) return;
-  
+
       setIsScrolling(true);
       if (event.deltaY > 0 && currentPage < pagesRef.current.length - 1) {
         setCurrentPage(currentPage + 1);
@@ -56,9 +58,9 @@ function App() {
       }
       setTimeout(() => setIsScrolling(false), 1000);
     };
-  
+
     window.addEventListener('wheel', handleWheel);
-  
+
     return () => {
       window.removeEventListener('wheel', handleWheel);
     };
@@ -74,7 +76,7 @@ function App() {
       delay: 0,
       smooth: "easeInOutQuart",
     });
-  
+
   };
 
   return (
@@ -83,8 +85,10 @@ function App() {
         className={`page ${currentPage === 0 ? 'active' : ''}`}
         id="page1"
         ref={(el) => (pagesRef.current[0] = el)}
+        style={{ position: 'relative' }}
       >
-        <p>hello</p>
+        <Stars />
+        <Presentation />
       </div>
       <div
         className={`page ${currentPage === 1 ? 'active' : ''}`}
