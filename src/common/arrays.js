@@ -20,6 +20,6 @@ const technologies = [
     { name: 'Google Search Console', icon: '' },
     { name: 'Google Tag Manager', icon: '' },
     { name: 'Google Data Studio', icon: '' }
-  ];
+];
 
-  export { skills, technologies }
+export { skills, technologies }

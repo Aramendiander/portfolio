@@ -1,30 +1,15 @@
 import { useEffect, useState, useRef } from 'react';
-import { skills, technologies } from '../common/arrays';
 import { CSSTransition } from 'react-transition-group';
+import TextAnimations from '../common/TextAnimations';
+import cvicon from '../assets/cvicon.png'
 
 const Presentation = () => {
-    const [skill, setSkill] = useState(skills[0])
     const [inProp, setInProp] = useState(true);
     const nodeRef = useRef(null);
 
 
 
-    useEffect(() => {
-        const intervalId = skillRotation();
-        return () => clearInterval(intervalId);
-    }, []);
 
-    const skillRotation = () => {
-        let i = 0;
-        return setInterval(() => {
-            setInProp(false);
-            setTimeout(() => {
-                setSkill(skills[i]);
-                setInProp(true);
-            }, 500);
-            i = (i + 1) % skills.length;
-        }, 5000);
-    }
 
 
 
@@ -33,18 +18,22 @@ const Presentation = () => {
             <h1>Hi, I'm Ander Aramendi</h1>
             <p>SEO Driven Web Developer</p>
             <CSSTransition nodeRef={nodeRef} in={inProp} timeout={500} classNames="skillrotation">
-                <p ref={nodeRef}>{skill}</p>
+                <TextAnimations />
             </CSSTransition>
-                
+
             <div className="mylinks">
-                <div>
+                <a rel="nofollow" href="https://github.com/aramendiander" target="_blank">
                     <i className="fa-brands fa-github"></i>
-                    <p>Github</p>
-                </div>
-                <div>
-                    <i className="fa-solid fa-file"></i>
-                    <p>Traditional CV</p>
-                </div>
+                </a>
+                <a rel="nofollow" href="https://www.linkedin.com/in/ander-aramendi/" target="_blank">
+                    <i className="fa-brands fa-linkedin"></i>
+                </a>
+                <a rel="nofollow" href="">
+                    <img src={cvicon} alt="" />
+                </a>
+                <a rel="nofollow" href="">
+                    <i className="fa-solid fa-envelope"></i>
+                </a>
             </div>
 
         </div>
