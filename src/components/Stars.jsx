@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 
-const Presentation = () => {
+const Stars = () => {
     const canvasRef = useRef(null);
     const starsRef = useRef([]);
 
@@ -78,7 +78,7 @@ const Presentation = () => {
             const dy = star.y - event.clientY;
             const dist = Math.hypot(dx, dy);
     
-            const mouseRadius = 200; // Increase this value to increase the mouse's area of effect
+            const mouseRadius = 100; // Increase this value to increase the mouse's area of effect
     
             if (dist < mouseRadius) {
                 const forceDirectionX = dx / dist;
@@ -101,4 +101,4 @@ const Presentation = () => {
     );
 };
 
-export default Presentation;
+export default Stars;

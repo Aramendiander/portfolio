@@ -1,8 +1,10 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, createContext } from 'react';
 import { Link, animateScroll as scroll } from "react-scroll";
 import './App.css';
 import Stars from './components/Stars';
 import Presentation from './components/Presentation';
+import Scrollmore from './components/Scrollmore';
+
 
 function App() {
   const [currentPage, setCurrentPage] = useState(0);
@@ -44,8 +46,6 @@ function App() {
     };
   }, [currentPage, isScrolling]);
 
-
-
   useEffect(() => {
     const handleWheel = (event) => {
       if (isScrolling) return;
@@ -79,33 +79,43 @@ function App() {
 
   };
 
+
+  const scrollToNextPage = () => {
+    console.log('you got here')
+    setCurrentPage(currentPage + 1);
+  }
+
+
   return (
     <>
-      <div
-        className={`page ${currentPage === 0 ? 'active' : ''}`}
-        id="page1"
-        ref={(el) => (pagesRef.current[0] = el)}
-        style={{ position: 'relative' }}
-      >
-        <Stars />
-        <Presentation />
-      </div>
-      <div
-        className={`page ${currentPage === 1 ? 'active' : ''}`}
-        id="page2"
-        ref={(el) => (pagesRef.current[1] = el)}
-      >
-        <p>hallo</p>
-      </div>
-      <div
-        className={`page ${currentPage === 2 ? 'active' : ''}`}
-        id="page3"
-        ref={(el) => (pagesRef.current[2] = el)}
-      >
-        <p>hollo</p>
-      </div>
+        <div
+          className={`page ${currentPage === 0 ? 'active' : ''}`}
+          id="page1"
+          ref={(el) => (pagesRef.current[0] = el)}
+          style={{ position: 'relative' }}
+        >
+          <Stars />
+          <Presentation />
+          <Scrollmore onClick={scrollToNextPage} />
+        </div>
+        <div
+          className={`page ${currentPage === 1 ? 'active' : ''}`}
+          id="page2"
+          ref={(el) => (pagesRef.current[1] = el)}
+        >
+          <p>hallo</p>
+        </div>
+        <div
+          className={`page ${currentPage === 2 ? 'active' : ''}`}
+          id="page3"
+          ref={(el) => (pagesRef.current[2] = el)}
+        >
+          <p>hollo</p>
+        </div>
     </>
   );
 }
 
 export default App;
+
+
