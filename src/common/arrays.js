@@ -1,6 +1,6 @@
 
 
-const skills = ['Technical SEO', 'SEO', 'Web Development', 'Web Analytics', 'Web Accessibility', 'Web Performance', 'Link Building', 'Web Auditing', 'Keyword Research', 'Content Creation', 'Content Strategy', 'Content Marketing', 'Social Media Marketing', 'Email Marketing']
+const skills = ['Web Development', 'Technical SEO', 'SEO', 'Web Analytics', 'Web Accessibility', 'Web Performance', 'Link Building', 'Web Auditing', 'Keyword Research', 'Content Creation', 'Content Strategy', 'Content Marketing', 'Social Media Marketing', 'Email Marketing']
 
 const technologies = [
     { name: 'HTML', icon: '' },

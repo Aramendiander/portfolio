@@ -1,26 +1,29 @@
-import { useEffect, useState, } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { skills, technologies } from '../common/arrays';
+import { CSSTransition } from 'react-transition-group';
 
 const Presentation = () => {
     const [skill, setSkill] = useState(skills[0])
+    const [inProp, setInProp] = useState(true);
+    const nodeRef = useRef(null);
+
 
 
     useEffect(() => {
-        skillRotation();
-    },[skill])
+        const intervalId = skillRotation();
+        return () => clearInterval(intervalId);
+    }, []);
 
     const skillRotation = () => {
-       setInterval(() => {
-        for (let i = 0; i < skills.length; i++) {
-            if (skill === skills[i]) {
-                if (i === skills.length - 1) {
-                    setSkill(skills[0])
-                } else {
-                    setSkill(skills[i + 1])
-                }
-            }
-        }
-       }, 5000);
+        let i = 0;
+        return setInterval(() => {
+            setInProp(false);
+            setTimeout(() => {
+                setSkill(skills[i]);
+                setInProp(true);
+            }, 500);
+            i = (i + 1) % skills.length;
+        }, 5000);
     }
 
 
@@ -29,7 +32,10 @@ const Presentation = () => {
         <div className="aboutme">
             <h1>Hi, I'm Ander Aramendi</h1>
             <p>SEO Driven Web Developer</p>
-            <p>{skill}</p>
+            <CSSTransition nodeRef={nodeRef} in={inProp} timeout={500} classNames="skillrotation">
+                <p ref={nodeRef}>{skill}</p>
+            </CSSTransition>
+                
             <div className="mylinks">
                 <div>
                     <i className="fa-brands fa-github"></i>

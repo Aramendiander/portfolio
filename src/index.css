@@ -167,3 +167,43 @@ button:focus-visible {
   display:flex;
   justify-content: space-around;
 }
+
+
+.skillrotation-enter {
+  opacity: 0;
+}
+.skillrotation-enter-active {
+  opacity: 1;
+  transition: opacity 200ms;
+}
+.skillrotation-exit {
+  opacity: 1;
+}
+.skillrotation-exit-active {
+  opacity: 0;
+  transition: opacity 200ms;
+}
+
+.fading {
+    position:absolute;
+    top:0; bottom:0; right:0;
+    width:100%;
+    background:white;
+    -moz-animation: fade 5s ease-in alternate infinite; /* Firefox */
+    -webkit-animation: fade 5s ease-in alternate infinite; /* Safari and Chrome */
+    -ms-animation: fade 5s ease-in alternate infinite; /* IE10 */
+    -o-animation: fade 5s ease-in alternate infinite; /* Opera */
+    animation: fade 5s ease-in alternate infinite;
+}
+
+
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange; }
+}
