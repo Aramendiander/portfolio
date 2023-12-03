@@ -10,11 +10,17 @@ const Presentation = () => {
     },[skill])
 
     const skillRotation = () => {
+       setInterval(() => {
         for (let i = 0; i < skills.length; i++) {
-            setTimeout(() => {
-                setSkill(skills[i])
-            }, 5000 * i)
+            if (skill === skills[i]) {
+                if (i === skills.length - 1) {
+                    setSkill(skills[0])
+                } else {
+                    setSkill(skills[i + 1])
+                }
+            }
         }
+       }, 5000);
     }
 
 
