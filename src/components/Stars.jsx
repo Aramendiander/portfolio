@@ -11,7 +11,7 @@ const Stars = () => {
         context.fillStyle = 'black';
         context.fillRect(0, 0, canvas.width, canvas.height);
 
-        starsRef.current = Array.from({ length: 300 }, () => createStar(canvas.width, canvas.height));
+        starsRef.current = Array.from({ length: 400 }, () => createStar(canvas.width, canvas.height));
         starsRef.current.forEach(star => drawStar(context, star));
 
         const animate = () => {
@@ -29,25 +29,29 @@ const Stars = () => {
                     const forceDirectionX = dx / dist;
                     const forceDirectionY = dy / dist;
                     const force = (mouseRadius - dist) / mouseRadius;
-                    forceX += forceDirectionX * force * 1;
-                    forceY += forceDirectionY * force * 1;
+                    forceX += forceDirectionX * force * 0.2;
+                    forceY += forceDirectionY * force * 0.2;
                 }
             
                 x += vx + forceX;
                 y += vy + forceY;
             
-                forceX *= 0.999; // Decrease the force
-                forceY *= 0.999; // Decrease the force
+                forceX *= 0.97; // Decrease the force
+                forceY *= 0.97; // Decrease the force
             
                 if (x < 0) {
-                    vx = Math.abs(vx);
+                    vx = Math.abs(vx) + 0.005; // Increase the velocity
                 } else if (x > canvas.width) {
-                    vx = -Math.abs(vx);
+                    vx = -Math.abs(vx) - 0.005; // Increase the velocity
+                } else {
+                    vx = vx > 0 ? Math.max(0.05, vx - 0.005) : Math.min(-0.05, vx + 0.005); // Slow down to normal behavior
                 }
                 if (y < 0) {
-                    vy = Math.abs(vy);
+                    vy = Math.abs(vy) + 0.005; // Increase the velocity
                 } else if (y > canvas.height) {
-                    vy = -Math.abs(vy);
+                    vy = -Math.abs(vy) - 0.005; // Increase the velocity
+                } else {
+                    vy = vy > 0 ? Math.max(0.05, vy - 0.005) : Math.min(-0.05, vy + 0.005); // Slow down to normal behavior
                 }
             
                 return { x, y, vx, vy, size, forceX, forceY };
