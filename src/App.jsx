@@ -81,7 +81,6 @@ function App() {
 
 
   const scrollToNextPage = () => {
-    console.log('you got here')
     setCurrentPage(currentPage + 1);
   }
 
@@ -103,14 +102,14 @@ function App() {
           id="page2"
           ref={(el) => (pagesRef.current[1] = el)}
         >
-          <p>hallo</p>
+          <p>Under construction</p>
         </div>
         <div
           className={`page ${currentPage === 2 ? 'active' : ''}`}
           id="page3"
           ref={(el) => (pagesRef.current[2] = el)}
         >
-          <p>hollo</p>
+          <p>Under construction</p>
         </div>
     </>
   );

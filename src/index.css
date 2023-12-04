@@ -13,6 +13,12 @@
    -moz-osx-font-smoothing: grayscale;
  }
 
+ * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
  p {
    margin: 0;
  }
@@ -82,13 +88,13 @@ button:focus-visible {
  }
 
  .page {
-   height: 100vh;
-   width: 100%;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   font-size: 2em;
- }
+  min-height: calc(var(--vh, 1vh) * 100);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+}
 
  /* #page1 {
   background-color: #3498db;
@@ -110,21 +116,33 @@ button:focus-visible {
  .aboutme {
    position: absolute;
    color: #fff;
-   background-color: black;
    display: flex;
    flex-direction: column;
    justify-content: center;
    align-items: center;
+   height: 100%;
+ }
 
+ .aboutme * {
+  background-color:black;
+ }
+
+ .aboutme h1 {
+  text-shadow: -4px 1px 1px #FD5C70;
  }
 
  .scrollmore {
    position: absolute;
-   bottom: 0;
+   bottom: 20px;
    display: flex;
    flex-direction: column;
    align-items: center;
    justify-content: center;
+   cursor: pointer;
+ }
+
+ .scrollmore * {
+  background-color: black;
  }
 
  .scrollmore:hover {
@@ -180,3 +198,4 @@ button:focus-visible {
   align-items: center;
   justify-content: center;
 }
+
