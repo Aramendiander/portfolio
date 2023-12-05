@@ -50,10 +50,11 @@ function App() {
     const handleWheel = (event) => {
       if (isScrolling) return;
 
-      setIsScrolling(true);
       if (event.deltaY > 0 && currentPage < pagesRef.current.length - 1) {
+        setIsScrolling(true);
         setCurrentPage(currentPage + 1);
       } else if (event.deltaY < 0 && currentPage > 0) {
+        setIsScrolling(true);
         setCurrentPage(currentPage - 1);
       }
       setTimeout(() => setIsScrolling(false), 1000);
@@ -65,6 +66,8 @@ function App() {
       window.removeEventListener('wheel', handleWheel);
     };
   }, [currentPage, isScrolling]);
+
+  console.log(isScrolling)
 
   useEffect(() => {
     scrollToPage(currentPage);
