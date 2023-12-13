@@ -67,7 +67,6 @@ function App() {
     };
   }, [currentPage, isScrolling]);
 
-  console.log(isScrolling)
 
   useEffect(() => {
     scrollToPage(currentPage);

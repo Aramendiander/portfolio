@@ -7,7 +7,7 @@ const Presentation = () => {
     const [inProp, setInProp] = useState(true);
     const nodeRef = useRef(null);
 
-
+/* 
     useEffect(() => {
         const setViewportHeight = () => {
             const vh = window.innerHeight * 0.01;
@@ -20,7 +20,7 @@ const Presentation = () => {
         return () => {
             window.removeEventListener('resize', setViewportHeight);
         };
-    }, []);
+    }, []); */
 
 
 
