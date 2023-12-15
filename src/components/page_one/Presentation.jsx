@@ -1,26 +1,15 @@
 import { useEffect, useState, useRef } from 'react';
 import { CSSTransition } from 'react-transition-group';
-import TextAnimations from '../common/TextAnimations';
-import cvicon from '../assets/cvicon.png'
+import TextAnimations from '../../common/TextAnimations';
+import cvicon from '../../assets/cvicon.png'
 
 const Presentation = () => {
     const [inProp, setInProp] = useState(true);
     const nodeRef = useRef(null);
 
-/* 
-    useEffect(() => {
-        const setViewportHeight = () => {
-            const vh = window.innerHeight * 0.01;
-            document.documentElement.style.setProperty('--vh', `${vh}px`);
-        };
-    
-        setViewportHeight();
-        window.addEventListener('resize', setViewportHeight);
-    
-        return () => {
-            window.removeEventListener('resize', setViewportHeight);
-        };
-    }, []); */
+
+
+
 
 
 

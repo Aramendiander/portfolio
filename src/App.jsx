@@ -1,9 +1,10 @@
 import { useState, useEffect, useRef, createContext } from 'react';
 import { Link, animateScroll as scroll } from "react-scroll";
 import './App.css';
-import Stars from './components/Stars';
-import Presentation from './components/Presentation';
-import Scrollmore from './components/Scrollmore';
+import Stars from './components/page_one/Stars';
+import Presentation from './components/page_one/Presentation';
+import Scrollmore from './components/page_one/Scrollmore';
+import Works from './components/page_two/Works';
 
 
 function App() {
@@ -104,7 +105,7 @@ function App() {
           id="page2"
           ref={(el) => (pagesRef.current[1] = el)}
         >
-          <p>Under construction</p>
+          <Works />
         </div>
         <div
           className={`page ${currentPage === 2 ? 'active' : ''}`}
