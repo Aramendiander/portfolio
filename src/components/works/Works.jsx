@@ -14,13 +14,13 @@ const Works = () => {
         <div className="works">
             <h2>My Works</h2>
             <div className="works-container">
-                <Carousel>
+                <Carousel showThumbs={false} showStatus={false}>
                     <Geogame />
                     <Vegolution />
                     <Pokeweb />
                 </Carousel>
             </div>
-        </div>
+        </div>  
     )
 }
 

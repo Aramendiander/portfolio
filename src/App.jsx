@@ -5,6 +5,7 @@ import Stars from './components/page_one/Stars';
 import Presentation from './components/page_one/Presentation';
 import Scrollmore from './components/page_one/Scrollmore';
 import Works from './components/works/Works';
+import Scrolltocv from './components/works/Scrolltocv';
 
 
 function App() {
@@ -106,6 +107,7 @@ function App() {
           ref={(el) => (pagesRef.current[1] = el)}
         >
           <Works />
+          
         </div>
         <div
           className={`page ${currentPage === 2 ? 'active' : ''}`}
