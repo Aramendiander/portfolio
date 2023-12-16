@@ -4,7 +4,7 @@ import './App.css';
 import Stars from './components/page_one/Stars';
 import Presentation from './components/page_one/Presentation';
 import Scrollmore from './components/page_one/Scrollmore';
-import Works from './components/page_two/Works';
+import Works from './components/works/Works';
 
 
 function App() {
