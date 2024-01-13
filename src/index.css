@@ -329,3 +329,12 @@ canvas {
     opacity: 1;
  }
 }
+
+.works-carousel {
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100dvh;
+}
