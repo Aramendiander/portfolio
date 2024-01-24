@@ -28,7 +28,6 @@ export default function Carroussel(props) {
           transform: 'translateY(-50%) translateX(-70.6667%) scale(0.333333)',
         };
       }
-      // Return null to use the default styles for other slides
       return null;
     };
   
