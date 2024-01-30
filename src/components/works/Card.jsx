@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { useSpring, animated } from "@react-spring/web";
 import Button from "./Button";
 
-function Card({ imagen, title, description }) {
+function Card({ imagen, title, description, link }) {
   const [show, setShown] = useState(false);
 
   const props3 = useSpring({
@@ -25,7 +25,7 @@ function Card({ imagen, title, description }) {
         {description} 
       </p>
       <div className={Styles.btnn}>
-      <a href="https://geogame.aramendi.dev" target="_blank">
+      <a href={link} target="_blank">
                         <div className="button">
                             <span className="button__mask"></span>
                             <span className="button__text">Check it out</span>
