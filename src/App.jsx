@@ -6,6 +6,8 @@ import Presentation from './components/page_one/Presentation';
 import Scrollmore from './components/page_one/Scrollmore';
 import Works from './components/works/Works';
 import Scrolltocv from './components/works/Scrolltocv';
+import AboutMe from './components/aboutme/AboutMe';
+import Contact from './components/contact/Contact';
 
 
 function App() {
@@ -106,7 +108,7 @@ function App() {
           id="page2"
           ref={(el) => (pagesRef.current[1] = el)}
         >
-          <Works />
+          <AboutMe />
           
         </div>
         <div
@@ -114,7 +116,14 @@ function App() {
           id="page3"
           ref={(el) => (pagesRef.current[2] = el)}
         >
-          <p>Under construction</p>
+          <Works />
+        </div>
+        <div
+          className={`page ${currentPage === 3 ? 'active' : ''}`}
+          id="page4"
+          ref={(el) => (pagesRef.current[3] = el)}
+        >
+          <Contact />
         </div>
     </>
   );

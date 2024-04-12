@@ -1,0 +1,75 @@
+#about-me-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 5% 0;
+}
+
+#about-me-wrapper>div {
+    width: 100%;
+    padding: 0 5%;
+}
+
+#about-me-wrapper h2 {
+    text-align: left;
+}
+
+
+.about-me p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    text-align: justify;
+}
+
+.skills div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.skills h3 {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.skills span {
+    padding: 0.5rem 1rem;
+    margin-bottom: 1.5rem;
+    margin-right: 1.5rem;
+    font-size: 1.6rem;
+    background: rgba(153, 153, 153, 0.2);
+    border-radius: 5px;
+    font-weight: 600;
+    color: #666;
+}
+
+@media screen and (max-width: 1200px) {
+    #about-me-wrapper {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    #about-me-wrapper div {
+        padding: 0 0%;
+    }
+
+    .skills span  {
+        font-size: 0.7rem;
+        margin-bottom: 0.3rem;
+    }
+
+    .skills h2 {
+        font-size: 1.2rem;
+        margin-top: 1rem;
+    }
+
+    .skills h3 {
+        font-size: 1.2rem;
+        margin-bottom: 0.3rem;
+    }
+
+    .about-me p {
+        font-size: 0.8rem;
+        margin-bottom: 10px;
+    }
+}

@@ -1,0 +1,52 @@
+.contact {
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+}
+
+.socials {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    margin-right: 5%;
+
+}
+
+
+
+.socials h2 {
+    margin: 2rem;
+}
+
+.socials a {
+    text-decoration: none;
+    color: #ffffffde;
+}
+
+.intouch {
+    font-family: 'Helvetica Neue Heavy', sans-serif;
+    font-size: 12rem;
+    padding: 5% 5%;
+    font-weight: 900;
+}
+
+.contactme{
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.email {
+    text-decoration: none;
+    color: #ffffffde;
+}
+
+
+@media screen and (max-width: 1200px) {
+    .intouch {
+        font-size: 6rem;
+    }
+
+}

@@ -1,65 +1,90 @@
 import { useState, useEffect } from 'react';
-import Carousel from "./Carousel";
-import Card from './Card';
 import { v4 as uuidv4 } from 'uuid';
 import geogame from '../../assets/geogame.png';
-import portfolio95 from '../../assets/portfolio95.png';
+import portfolio95 from '../../assets/portfolio952.png';
 import moodup from '../../assets/moodup.png';
 import tasaweb from '../../assets/tasaweb.png';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/bundle';
+import './works.css'
 
 const Works = () => {
-
-  let cards = [
-    {
-      key: uuidv4(),
-      content: (
-        <Card imagen={portfolio95} title={'Portfolio 95'} description={'A Windows 95 style portfolio'} link={'https://portfolio95.aramendi.dev/'} />
-      )
-    },
-    {
-      key: uuidv4(),
-      content: (
-        <Card imagen={geogame} title={'Geogame'} description={'A React game about guessing flags and capitals'} link={'https://geogame.aramendi.dev/'} />
-      )
-    },
-    {
-      key: uuidv4(),
-      content: (
-        <Card imagen={moodup} title={'moodup'} link={'https://moodup.aramendi.dev/'} description={
-          <>
-            A web app that allows employees to vote their mood at check in and check out as well as the ability to establish an anonymous channel with HR.<br/><br/>
-            For information about credentials to test, check  &nbsp;
-            <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">my github</a>.
-          </>} />
-      )
-    },
-    {
-      key: uuidv4(),
-      content: (
-        <Card imagen={tasaweb} title={'TasaWeb'} description={'The result of a one-day hackathon. This app evaluates the price of a house by comparing it with data scraped from Spain\'s largest real estate portal.'} />
-      )
-    },
-    {
-      key: uuidv4(),
-      content: (
-        <Card imagen="https://updates.theme-fusion.com/wp-content/uploads/2019/01/pwa_880_660.jpg" />
-      )
-    }
-  ];
-
+  const loremIpsum = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
 
   return (
-    <div className="works-carousel">
-      <Carousel
-        cards={cards}
-        height="500px"
-        width="30%"
-        margin="0 auto"
-        offset={2}
-        showArrows={false}
-      />
-    </div>
-  )
+    <>
+      <h2>My side projects</h2>
+      <Swiper
+        spaceBetween={50}
+        slidesPerView={1.2}
+        centeredSlides={true}
+        onSlideChange={() => console.log('slide change')}
+        onSwiper={(swiper) => console.log(swiper)}
+      >
+        <SwiperSlide>
+          <div className="swiper-img-wrapper">
+            <img src={portfolio95} alt="Placeholder" />
+            <div className="visit-button">
+              <a href="https://portfolio95.aramendi.dev/" target="_blank">
+                <div className="button">
+                  <span className="button__mask"></span>
+                  <span className="button__text">Check it out</span>
+                  <span className="button__text button__text--bis">Check it out</span>
+                </div>
+              </a>
+            </div>
+          </div>
+          <p>A Windows 95 styled portfolio built with React</p>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="swiper-img-wrapper">
+            <img src={geogame} alt="Placeholder" />
+            <div className="visit-button">
+              <a href="https://geogame.aramendi.dev/" target="_blank">
+                <div className="button">
+                  <span className="button__mask"></span>
+                  <span className="button__text">Check it out</span>
+                  <span className="button__text button__text--bis">Check it out</span>
+                </div>
+              </a>
+            </div>
+          </div>
+          <p>Geography game using the RestCountries API. Play <i>Guess the flag</i>, <i>Guess the capital</i> or <i>learn about each country in the world</i></p>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="swiper-img-wrapper">
+            <img src={moodup} alt="Placeholder" />
+            <div className="visit-button">
+              <a href="https://moodup.aramendi.dev/admin" target="_blank">
+                <div className="button">
+                  <span className="button__mask"></span>
+                  <span className="button__text">Check it out</span>
+                  <span className="button__text button__text--bis">Check it out</span>
+                </div>
+              </a>
+            </div>
+          </div>
+          <p>A mood tracker webapp built in React and NodeJS. It records employees' moods and allows them to communicate with HR. <br /><br /> HR can view graphics to observe the evolution of employees' moods. They can also respond to employees' messages.</p>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="swiper-img-wrapper">
+            <img src={tasaweb} alt="Placeholder" />
+            <div className="visit-button">
+              <a href="https://tasaweb.aramendi.dev/" target="_blank">
+                <div className="button">
+                  <span className="button__mask"></span>
+                  <span className="button__text">Check it out</span>
+                  <span className="button__text button__text--bis">Check it out</span>
+                </div>
+              </a>
+            </div>
+          </div>
+          <p>This web app calculates the price of a house based on parameters such as square meters, rooms, bathrooms... It uses a predictive model built in Python using over 1 million house listings scraped from Spain's largest real estate portal.</p>
+        </SwiperSlide>
+      </Swiper>
+    </>
+  );
 }
 
 
